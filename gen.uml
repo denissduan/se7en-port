@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_tEkhsFVKEeSR_IdHNTISjA" name="oa">
+  <packagedElement xmi:type="uml:Model" xmi:id="_VybDQGJjEeSBmeOsfYJw4w" name="base">
+    <packagedElement xmi:type="uml:Package" xmi:id="_0RdmMFVKEeSR_IdHNTISjA" name="base">
+      <packagedElement xmi:type="uml:Class" xmi:id="_X8L6YZNeEeSX1u00bXFo3Q" name="BaseRole">
+        <ownedAttribute xmi:id="_OkROsJZREeS-ac4jT2ufgg" name="prop"/>
+        <ownedOperation xmi:id="_aV91MJNeEeSX1u00bXFo3Q" name="custom_opt">
+          <nameExpression xmi:id="_fzZHMJNeEeSX1u00bXFo3Q" name="" symbol=""/>
+          <ownedRule xmi:id="_wwMmkJNeEeSX1u00bXFo3Q" name=""/>
+          <ownedRule xmi:id="_xNtB8JNeEeSX1u00bXFo3Q"/>
+          <ownedRule xmi:id="_c5yDEJZOEeS-ac4jT2ufgg"/>
+          <ownedRule xmi:type="uml:InteractionConstraint" xmi:id="__DViUJZOEeS-ac4jT2ufgg" name=""/>
+          <ownedParameter xmi:id="_qoLiMZZNEeS-ac4jT2ufgg">
+            <nameExpression xmi:id="_-bw6EJZQEeS-ac4jT2ufgg"/>
+            <type xmi:type="uml:DataType" href="engine.uml#_dIXU0JZSEeS-ac4jT2ufgg"/>
+            <upperValue xmi:type="uml:LiteralString" xmi:id="_59gmEJZQEeS-ac4jT2ufgg" name="" value=""/>
+            <lowerValue xmi:type="uml:LiteralString" xmi:id="_116ekJZQEeS-ac4jT2ufgg" name="" value=""/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_fMCHoJZQEeS-ac4jT2ufgg" value=""/>
+          </ownedParameter>
+          <templateBinding xmi:id="_kkkXMJNeEeSX1u00bXFo3Q"/>
+          <templateBinding xmi:id="_v5zxIJNeEeSX1u00bXFo3Q" signature="_lOmLoJNeEeSX1u00bXFo3Q"/>
+          <ownedTemplateSignature xmi:id="_lOmLoJNeEeSX1u00bXFo3Q" parameter="_1Hp8UJZOEeS-ac4jT2ufgg">
+            <ownedParameter xmi:id="_1Hp8UJZOEeS-ac4jT2ufgg"/>
+          </ownedTemplateSignature>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_PkLe4GKQEeSNq6uOnfkd8A" name="sys">
+    <packagedElement xmi:type="uml:Package" xmi:id="_-GFJwGJiEeSBmeOsfYJw4w" name="sys"/>
+  </packagedElement>
+</uml:Model>

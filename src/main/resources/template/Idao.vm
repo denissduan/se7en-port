@@ -1,0 +1,11 @@
+package com.se7en.dao.${domainName};
+import com.se7en.model.${domainName}.${className};
+import com.se7en.dao.IEjbDao;
+
+/**
+ * #if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end
+ * database access obj interface 
+ */
+public interface I${className}Dao extends IEjbDao<${className}> {
+
+}

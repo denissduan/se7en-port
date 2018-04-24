@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<chain:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:chain="http://www.obeo.fr/acceleo/chain">
+  <repository>
+    <files xsi:type="chain:Model" path="/se7en-port/gen.uml"/>
+    <files xsi:type="chain:Folder" path="/se7en-port"/>
+    <files xsi:type="chain:Log" path="/se7en-port/c_modelcfg.log.txt"/>
+    <files xsi:type="chain:EmfMetamodel" path="http://www.eclipse.org/uml2/2.0.0/UML"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/model.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/modelcfg.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/idao.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/dao.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/service.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/control.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/gen-manage.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/gen-detail.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/createtable.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/tree-control.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/tree-form-manage.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/tree-form-detail.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/tree-list-manage.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/tree-list-detail.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/tree-list-list.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/js-manage.mt"/>
+    <files xsi:type="chain:Generator" path="/se7en-port/tpl/js-detail.mt"/>
+  </repository>
+  <actions documentation="model">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.4" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="modelcfg">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.5" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="idao">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.6" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="dao">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.7" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="service">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.8" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="control">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.9" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="se7en-manage">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.10" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="se7en-detail">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.11" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="createtable">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.12" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="js-manage">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.19" folder="//@repository/@files.1"/>
+  </actions>
+  <actions documentation="js-detail">
+    <actions xsi:type="chain:Generate" documentation="Generate" log="//@repository/@files.2" model="//@repository/@files.0" metamodel="//@repository/@files.3" generator="//@repository/@files.20" folder="//@repository/@files.1"/>
+  </actions>
+</chain:Chain>

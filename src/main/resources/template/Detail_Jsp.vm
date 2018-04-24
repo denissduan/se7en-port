@@ -1,0 +1,40 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" 
+					  	+ request.getServerPort() + path + "/";
+%>
+<script type="text/javascript">
+	(function(){
+		$(function(){
+			$("#$StringUtil.firstLower($className)").submit(function() {
+				return formSubmit($('#$StringUtil.firstLower($className)'));
+			});
+		});
+	})();
+</script>
+<div class="page-header">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</div>
+<form id="$StringUtil.firstLower($className)" action="$StringUtil.firstLower($className)/save.do" method="post" class="form-horizontal" role="form">
+	<input type="hidden" name="id" value="${${StringUtil.firstLower($className)}.id }" >
+	#parse("./OperateForm.vm")
+	<div class="clearfix form-actions">
+		<div class="col-md-offset-3 col-md-9">
+			<button class="btn btn-info" type="submit">
+				<i class="ace-icon fa fa-check bigger-110"></i>
+				提交
+			</button>
+
+			&nbsp; &nbsp; &nbsp;
+			<button class="btn" type="reset">
+				<i class="ace-icon fa fa-undo bigger-110"></i>
+				重置
+			</button>
+			
+			&nbsp; &nbsp; &nbsp;
+			<button class="btn btn-grey" type="button" onclick="loadMain('$StringUtil.firstLower($className)/init.do')">
+				<i class="ace-icon fa fa-reply bigger-110"></i>
+				返回
+			</button>
+		</div>
+	</div>
+</form>

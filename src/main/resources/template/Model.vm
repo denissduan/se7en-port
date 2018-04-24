@@ -1,0 +1,304 @@
+package com.se7en.model.${domainName};
+
+#foreach( $prop in $class.getAllAttributes() )
+#set( $type = $prop.getType() )
+#if( $prop.getType().toString().contains("PrimitiveTypeImpl"))
+#set($typeName = $type.eProxyURI().fragment().toLowerCase())
+#if ($typeName.contains("string"))
+#elseif($typeName.contains("int"))
+#elseif($typeName.contains("boolean"))
+#elseif($typeName.contains("byte"))
+#elseif($typeName.contains("char"))
+#elseif($typeName.contains("short"))
+#elseif($typeName.contains("long"))
+#elseif($typeName.contains("float"))
+#elseif($typeName.contains("double"))
+#elseif($typeName.contains("blob"))
+import java.sql.Blob;
+#elseif($typeName.contains("clob"))
+import java.sql.Clob;
+#else
+#set($typeName = $type.getName().toLowerCase())
+#if( $typeName.contains("date") )
+import java.util.Date;
+#elseif( $typeName.contains("datetime") )
+import java.util.Date;
+#end
+#end
+#elseif( $prop.getType().toString().contains("EnumerationImpl"))
+#elseif( $prop.getType().toString().contains("ClassImpl"))
+#set( $cdName = $prop.getClientDependencies()[0].Name )
+#set($typeName = $type.getName())
+#if(${domainName} != ${type.Model.Name})
+import com.se7en.model.${type.Model.Name}.$typeName;
+#end
+#if ($cdName == "1-*")
+import java.util.Set;
+import java.util.LinkedHashSet;
+#elseif ($cdName == "*-1")
+#elseif ($cdName == "1-1")
+#elseif ($cdName == "*-*")
+#end
+#else
+#end
+#end
+#if ($class.getSuperClasses().size() == 1)
+import com.se7en.model.${class.SuperClasses[0].getName()};
+#end
+
+/**
+ * ${className} entity
+ */
+#if(${class.SuperClasses.size()} > 0)
+#set($superClsName = ${class.SuperClasses[0].getName()})
+public class ${className} extends $StringUtil.capitalize($superClsName) implements java.io.Serializable {
+#else
+public class ${className} implements java.io.Serializable {
+#end
+
+public final static ${className} EMPTY_${className.toUpperCase()} = new ${className}();
+
+	/** default constructor */
+	public $StringUtil.capitalize(${class.Name})() {
+	}
+
+	// Fields
+
+#foreach( $prop in $class.getAllAttributes() )
+#set( $type = $prop.getType() )
+#set( $typeName = $type.getName() )
+#if( $prop.getType().toString().contains("PrimitiveTypeImpl"))
+#set($typeName = $type.eProxyURI().fragment().toLowerCase())
+#if ($typeName.contains("string"))
+	private String $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("int"))
+	private Integer $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("boolean"))
+	private Integer $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("byte"))
+	private Byte $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("char"))
+	private String $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("short"))
+	private Short $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("long"))
+	private Long $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("float"))
+	private Float $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("double"))
+	private Double $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("blob"))
+	private Blog $StringUtil.firstLower($prop.Name);
+
+#elseif($typeName.contains("clob"))
+	private String $StringUtil.firstLower($prop.Name);
+
+#else
+#set($typeName = $type.getName().toLowerCase())
+#if( $typeName.contains("date") )
+	private Date $StringUtil.firstLower($prop.Name);
+
+#elseif( $typeName.contains("datetime") )
+	private Date $StringUtil.firstLower($prop.Name);
+
+#end
+#end
+#elseif( $prop.getType().toString().contains("EnumerationImpl"))
+	private Integer $StringUtil.firstLower($prop.Name);
+
+#elseif( $prop.getType().toString().contains("ClassImpl"))
+#set( $cdName = $prop.getClientDependencies()[0].Name )
+#if ($cdName == "1-*")
+	private Set<$typeName> $StringUtil.firstLower($prop.Name)s = new LinkedHashSet<$typeName>();
+
+#elseif ($cdName == "*-1")
+	private $typeName $StringUtil.firstLower($prop.Name);
+
+#elseif ($cdName == "1-1")
+	private $typeName $StringUtil.firstLower($prop.Name);
+
+#elseif ($cdName == "*-*")
+#end
+#else
+#end
+#end
+	// Property accessors
+#foreach( $prop in $class.getAllAttributes() )
+#set( $type = $prop.getType() )
+#set( $typeName = $type.getName() )
+#if( $prop.getType().toString().contains("PrimitiveTypeImpl"))
+#set($typeName = $type.eProxyURI().fragment().toLowerCase())
+#if ($typeName.contains("string"))
+	public String get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(String $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("int"))
+	public Integer get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Integer $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("boolean"))
+	public Integer get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Integer $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("byte"))
+	public Byte get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Byte $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("char"))
+	public String get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(String $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("short"))
+	public Short get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Short $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("long"))
+	public Long get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Long $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("float"))
+	public Float get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Float $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("double"))
+	public Double get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Double $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("blob"))
+	public Blob get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Blob $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif($typeName.contains("clob"))
+	public String get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(String $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#else
+#set($typeName = $type.getName().toLowerCase())
+#if( $typeName.contains("date") )
+	public Date get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Date $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif( $typeName.contains("datetime") )
+	public Date get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Date $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#end
+#end
+#elseif( $prop.getType().toString().contains("EnumerationImpl"))
+	public Integer get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)(Integer $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif( $prop.getType().toString().contains("ClassImpl"))
+#set( $cdName = $prop.getClientDependencies()[0].Name )
+#if ($cdName == "1-*")
+	public Set<$typeName> get$StringUtil.capitalize($prop.Name)s() {
+		return $StringUtil.firstLower($prop.Name)s;
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)s(Set<$typeName> $StringUtil.firstLower($prop.Name)s) {
+		this.$StringUtil.firstLower($prop.Name)s = $StringUtil.firstLower($prop.Name)s;
+	}
+
+#elseif ($cdName == "*-1")
+	public $typeName get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)($typeName $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif ($cdName == "1-1")
+	public $typeName get$StringUtil.capitalize($prop.Name)() {
+		return $StringUtil.firstLower($prop.Name);
+	}
+
+	public void set$StringUtil.capitalize($prop.Name)($typeName $StringUtil.firstLower($prop.Name)) {
+		this.$StringUtil.firstLower($prop.Name) = $StringUtil.firstLower($prop.Name);
+	}
+
+#elseif ($cdName == "*-*")
+#end
+#else
+#end
+#end
+}

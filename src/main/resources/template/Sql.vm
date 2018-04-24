@@ -1,0 +1,55 @@
+create table $TemplateStringUtil.getTableNameFromClassName($class.Name) (
+#foreach( $prop in $class.getAllAttributes() )
+#set( $type = $prop.getType() )
+#set( $typeName = $type.getName() )
+#if( $prop.getType().toString().contains("PrimitiveTypeImpl"))
+#set($typeName = $type.eProxyURI().fragment().toLowerCase())
+#if ($typeName.contains("string"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) varchar#if($prop.upper != "" && $prop.upper != 1)(${prop.Upper})#else(32)#end #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("int"))
+#if($prop.Name == "id")
+	id integer primary key auto_increment comment '主键',
+#else
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) int#if($prop.upper != "" && $prop.upper != 1)(${prop.Upper})#else(2)#end #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#end
+#elseif($typeName.contains("boolean"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) int(2) #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("byte"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) int(2) #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("char"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) varchar(2) #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("short"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) int(4) #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("long"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) bigint #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("float"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) float #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("double"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) double #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("blob"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) blob #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif($typeName.contains("clob"))
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) text #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#else
+#set($typeName = $type.getName().toLowerCase())
+#if( $typeName.contains("date") )
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) date #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif( $typeName.contains("datetime") )
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name) datetime #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#end
+#end
+#elseif( $prop.getType().toString().contains("EnumerationImpl"))
+	$prop.Name int(2) comment '',
+#elseif( $prop.getType().toString().contains("ClassImpl"))
+#set( $cdName = $prop.getClientDependencies()[0].Name )
+#if ($cdName == "1-*")
+#elseif ($cdName == "*-1")
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name)_id integer #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif ($cdName == "1-1")
+	$TemplateStringUtil.getFieldNameFromPropertyName($prop.Name)_id integer #if($prop.OwnedComments.size() == 1)comment '$prop.OwnedComments.get(0).Body'#end,
+#elseif ($cdName == "*-*")
+#end
+#else
+#end
+#end
+)ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4  #if($class.OwnedComments.size() == 1)comment '$class.OwnedComments.get(0).Body'#end;

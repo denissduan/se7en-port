@@ -1,0 +1,133 @@
+package com.se7en.service.${domainName};
+import java.util.List;
+import java.util.ArrayList;
+import javax.annotation.Resource;
+import org.springframework.stereotype.Service;
+import com.se7en.common.util.StringUtil;
+import com.se7en.service.AbstractEjbService;
+import com.se7en.web.vo.PageView;
+import com.se7en.web.vo.QueryView;
+import com.se7en.model.${domainName}.${className};
+import com.se7en.dao.${domainName}.I${className}Dao;
+#if ($class.getSuperClasses().size() == 1 && ${class.SuperClasses[0].getName()} == "BaseHierarchy")
+import com.se7en.service.BaseHierarchyService;
+#end
+
+/**
+ * #if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end
+ * ${className} service
+ */
+@Service
+#if ($class.getSuperClasses().size() == 1 && ${class.SuperClasses[0].getName()} == "BaseHierarchy")
+public class ${className}Service extends ${class.SuperClasses[0].getName()}Service<${className}> {
+#else
+public class ${className}Service extends AbstractEjbService<${className}> {
+#end
+
+	@Resource
+	private I${className}Dao dao;
+	
+	@Override
+	public I${className}Dao getDao() {
+	
+		return dao;
+	}
+	
+	public List<${className}> queryAll(){
+		
+		return dao.queryAll();
+	}
+	
+	public PageView pageViewQueryS(${className} ${StringUtil.firstLower(${className})},QueryView view){
+		List<Object> params = new ArrayList<Object>();
+		
+		StringBuilder sql = new StringBuilder(" select ");
+		sql.append(" ${className.toLowerCase()}.id ");
+#foreach( $opt in $class.getOwnedOperations() )
+#if(${opt.Name.contains("list")})
+#foreach ($optParam in $opt.OwnedParameters)
+#set($fldName = ${optParam.Name})
+#set($fldClassName = ${fldClassName})
+#set($prop = $modelEngine.getFirstProperty($className,${fldName}))
+#set( $type = $prop.getType() )
+#if ($modelEngine.isClassFirstProperty($className,${fldName}))
+##sql.append(" ,${type.Name.toLowerCase()}.name as ${type.Name.lowerCase()}_${fldName.split("\\.")[1]} ");
+#else
+		sql.append(" ,${className.toLowerCase()}.${fldName} as ${className.toLowerCase()}_${fldName} ");
+#end
+#end
+#end
+#end
+		sql.append(" from $TemplateStringUtil.getTableNameFromClassName(${className}) ${className.toLowerCase()} ");
+#foreach( $opt in $class.getOwnedOperations() )
+#if(${opt.Name.contains("list")})
+#foreach ($optParam in $opt.OwnedParameters)
+#set($fldName = ${optParam.Name})
+#set($fldClassName = ${fldClassName})
+#set($prop = $modelEngine.getProperty($className,${fldName}))
+#set( $type = $prop.getType() )
+#if ($modelEngine.isClassProperty($className,${fldName}))
+##sql.append(" left join $TemplateStringUtil.getTableNameFromClassName($type.Name) ${type.Name.toLowerCase()} on ${className.toLowerCase()}.${fldClassName}_id = ${type.Name.toLowerCase()}.id ");
+#end
+#end
+#end
+#end
+
+		sql.append(" where 1 = 1 ");
+#foreach( $opt in $class.getOwnedOperations() )
+#if(${opt.Name.contains("list")})
+#foreach ($optParam in $opt.OwnedParameters)
+#set($fldName = ${optParam.Name})
+#set($fldClassName = ${fldName.spllit("\\.")[0]})
+#set($prop = $modelEngine.getFirstProperty($className,${fldName}))
+#set( $type = $prop.getType() )
+#if( $prop.getType().toString().contains("PrimitiveTypeImpl"))
+#set($typeName = $type.eProxyURI().fragment().toLowerCase())
+#if ($typeName.contains("string"))
+		if(StringUtil.isNotBlank(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${prop.Name})}())){
+			sql.append(" and ${className.toLowerCase()}.${fldName} like ? ");
+			params.add("%" + ${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${fldName})}() + "%");
+		}
+#elseif($typeName.contains("int"))
+		if(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${prop.Name})}() != null){
+			sql.append(" and ${className.toLowerCase()}.${fldName} = ? ");
+			params.add(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${fldName})}());
+		}
+#elseif($typeName.contains("boolean"))
+		if(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${prop.Name})}() != null){
+			sql.append(" and ${className.toLowerCase()}.${fldName} = ? ");
+			params.add(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${fldName})}());
+		}
+#elseif($typeName.contains("byte"))
+#elseif($typeName.contains("char"))
+#elseif($typeName.contains("short"))
+#elseif($typeName.contains("long"))
+#elseif($typeName.contains("float"))
+#elseif($typeName.contains("double"))
+#elseif($typeName.contains("blob"))
+#elseif($typeName.contains("clob"))
+#else
+#set($typeName = $type.getName().toLowerCase())
+#if( $typeName.contains("date") )
+		if(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${prop.Name})}() != null){
+			sql.append(" and ${className.toLowerCase()}.${fldName} = ? ");
+			params.add(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${fldName})}());
+		}
+#elseif( $typeName.contains("datetime") )
+		if(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${prop.Name})}() != null){
+			sql.append(" and ${className.toLowerCase()}.${fldName} = ? ");
+			params.add(${StringUtil.firstLower(${className})}.get${StringUtil.capitalize(${fldName})}());
+		}
+#end
+#end
+#elseif( $prop.getType().toString().contains("EnumerationImpl"))
+#elseif( $prop.getType().toString().contains("ClassImpl"))
+#else
+#end
+#end
+#end
+#end
+		return getPageQueryService().pageQueryS(sql.toString(), params.toArray(), view, dao);
+	}
+
+}

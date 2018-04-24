@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_RMmxADdpEeSHM98sghtryg" name="oa">
+  <packagedElement xmi:type="uml:Model" xmi:id="_nS_XAGJjEeSBmeOsfYJw4w" name="base">
+    <packagedElement xmi:type="uml:Package" xmi:id="_lAR6YDdqEeSHM98sghtryg" name="base">
+      <packagedElement xmi:type="uml:Class" xmi:id="_bx0gMDwfEeS8msac4nYokQ" name="BaseUnit">
+        <ownedComment xmi:id="_IspA4UM3EeSE7sgcgBe8lg">
+          <body>组织</body>
+        </ownedComment>
+        <generalization xmi:id="_vBZhMFIdEeSujpY1i9m1Pg" general="_qmkY21IWEeSYGO717AddZA"/>
+        <ownedAttribute xmi:id="_-JqFQFVIEeSR_IdHNTISjA" name="area" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_kpIKAFIWEeSYGO717AddZA" aggregation="shared">
+          <ownedComment xmi:id="_qM9Q0FVJEeSR_IdHNTISjA">
+            <body>区域</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_C-PhoD27EeS0nbOp8P7Ewg" name="state" type="_qmkY0VIWEeSYGO717AddZA">
+          <ownedComment xmi:id="_ICpPoD27EeS0nbOp8P7Ewg">
+            <body>状态</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_NoAJsEJdEeSvPc90NfXrWw" name="phone">
+          <ownedComment xmi:id="_WBMpQEJdEeSvPc90NfXrWw">
+            <body>办公电话</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_cY260D27EeS0nbOp8P7Ewg" name="field_form">
+          <ownedParameter xmi:id="_n7PEgUMvEeSBfo9VKBabyw" name="name"/>
+          <ownedParameter xmi:id="_CgDvcEJeEeSvPc90NfXrWw" name="phone"/>
+          <ownedParameter xmi:id="_hIFqED27EeS0nbOp8P7Ewg" name="area"/>
+          <ownedParameter xmi:id="_jCux0D27EeS0nbOp8P7Ewg" name="state"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DP2ZMETFEeS72a5NHg5pmA" name="field_list">
+          <ownedParameter xmi:id="_n7PEgUMvEeSBfo9VKBabyw" name="id"/>
+          <ownedParameter xmi:id="_OEm8QETFEeS72a5NHg5pmA" name="name"/>
+          <ownedParameter xmi:id="_TalicETFEeS72a5NHg5pmA" name="phone"/>
+          <ownedParameter xmi:id="_VIHbQETFEeS72a5NHg5pmA" name="state"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_GRQ7wETFEeS72a5NHg5pmA" name="field_search">
+          <ownedParameter xmi:id="_WgBpYETFEeS72a5NHg5pmA" name="name"/>
+          <ownedParameter xmi:id="_YAcTQETFEeS72a5NHg5pmA" name="phone"/>
+          <ownedParameter xmi:id="_ZySEUETFEeS72a5NHg5pmA" name="state"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_koreEFIWEeSYGO717AddZA" name="BaseMenu">
+        <ownedComment xmi:id="_koreEVIWEeSYGO717AddZA">
+          <body>菜单</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_koreElIWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_koreE1IWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koreFFIWEeSYGO717AddZA" name="length" value="11"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreFVIWEeSYGO717AddZA" name="pid">
+          <ownedComment xmi:id="_koreFlIWEeSYGO717AddZA">
+            <body>父节点</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koreF1IWEeSYGO717AddZA" name="length" value="11"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreGFIWEeSYGO717AddZA" name="name">
+          <ownedComment xmi:id="_koreGVIWEeSYGO717AddZA">
+            <body>名称</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koreGlIWEeSYGO717AddZA" name="length" value="40"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreG1IWEeSYGO717AddZA" name="icon">
+          <ownedComment xmi:id="_koreHFIWEeSYGO717AddZA">
+            <body>图标</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koreHVIWEeSYGO717AddZA" name="length" value="40"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreHlIWEeSYGO717AddZA" name="url">
+          <ownedComment xmi:id="_koreH1IWEeSYGO717AddZA">
+            <body>链接</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koreIFIWEeSYGO717AddZA" name="length" value="100"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreIVIWEeSYGO717AddZA" name="open">
+          <ownedComment xmi:id="_koreIlIWEeSYGO717AddZA">
+            <body>是否展开</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreI1IWEeSYGO717AddZA" name="data">
+          <ownedComment xmi:id="_koreJFIWEeSYGO717AddZA">
+            <body>节点数据</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koreJVIWEeSYGO717AddZA" name="length" value="100"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreJlIWEeSYGO717AddZA" name="sindex">
+          <ownedComment xmi:id="_koreJ1IWEeSYGO717AddZA">
+            <body>显示顺序</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koreKFIWEeSYGO717AddZA" value="11"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreKVIWEeSYGO717AddZA" name="state">
+          <ownedComment xmi:id="_koreKlIWEeSYGO717AddZA">
+            <body>状态</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koreK1IWEeSYGO717AddZA" value="2"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koreLFIWEeSYGO717AddZA" name="length" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreLVIWEeSYGO717AddZA" name="lindex">
+          <ownedComment xmi:id="_koreLlIWEeSYGO717AddZA">
+            <body>左顺序</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koreL1IWEeSYGO717AddZA" value="11"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_koreMFIWEeSYGO717AddZA" name="rindex">
+          <ownedComment xmi:id="_koreMVIWEeSYGO717AddZA">
+            <body>右顺序</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koreMlIWEeSYGO717AddZA" value="11"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_koreM1IWEeSYGO717AddZA" name="fld_list">
+          <ownedParameter xmi:id="_koreNFIWEeSYGO717AddZA" name="name"/>
+          <ownedParameter xmi:id="_koreNVIWEeSYGO717AddZA" name="icon"/>
+          <ownedParameter xmi:id="_koreNlIWEeSYGO717AddZA" name="open"/>
+          <ownedParameter xmi:id="_koreN1IWEeSYGO717AddZA" name="sindex"/>
+          <ownedParameter xmi:id="_koreOFIWEeSYGO717AddZA" name="state"/>
+          <ownedParameter xmi:id="_koreOVIWEeSYGO717AddZA" name="data"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_koreOlIWEeSYGO717AddZA" name="fld_search">
+          <ownedParameter xmi:id="_koreO1IWEeSYGO717AddZA" name="name"/>
+          <ownedParameter xmi:id="_korePFIWEeSYGO717AddZA" name="icon"/>
+          <ownedParameter xmi:id="_korePVIWEeSYGO717AddZA" name="state"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_korePlIWEeSYGO717AddZA" name="fld_form">
+          <ownedParameter xmi:id="_koreP1IWEeSYGO717AddZA" name="id"/>
+          <ownedParameter xmi:id="_koreQFIWEeSYGO717AddZA" name="pid"/>
+          <ownedParameter xmi:id="_koreQVIWEeSYGO717AddZA" name="name"/>
+          <ownedParameter xmi:id="_koreQlIWEeSYGO717AddZA" name="icon"/>
+          <ownedParameter xmi:id="_koreQ1IWEeSYGO717AddZA" name="url"/>
+          <ownedParameter xmi:id="_koreRFIWEeSYGO717AddZA" name="open"/>
+          <ownedParameter xmi:id="_koreRVIWEeSYGO717AddZA" name="data"/>
+          <ownedParameter xmi:id="_koreRlIWEeSYGO717AddZA" name="sindex"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_kpIKAFIWEeSYGO717AddZA" name="BaseArea">
+        <generalization xmi:id="_xQJQsFIdEeSujpY1i9m1Pg" general="_qmkY21IWEeSYGO717AddZA"/>
+        <ownedAttribute xmi:id="_kpIKAlIWEeSYGO717AddZA" name="describ">
+          <ownedComment xmi:id="_kpIKA1IWEeSYGO717AddZA">
+            <body>描述</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralInteger" xmi:id="_kpIKBFIWEeSYGO717AddZA" name="length" value="400"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_kpIKBVIWEeSYGO717AddZA" name="flds_form">
+          <ownedParameter xmi:id="_kpIKBlIWEeSYGO717AddZA" name="name"/>
+          <ownedParameter xmi:id="_kpIKB1IWEeSYGO717AddZA" name="describ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_MxpccFxnEeSmKPoJ1dtJaQ" name="BaseUser">
+        <generalization xmi:id="_MxpccVxnEeSmKPoJ1dtJaQ" general="_qmkY7VIWEeSYGO717AddZA"/>
+        <ownedAttribute xmi:id="_MxpcclxnEeSmKPoJ1dtJaQ" name="name">
+          <ownedComment xmi:id="_Mxpcc1xnEeSmKPoJ1dtJaQ">
+            <body>用户名</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralInteger" xmi:id="_MxpcdFxnEeSmKPoJ1dtJaQ" name="length" value="40"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_MxpcdVxnEeSmKPoJ1dtJaQ" name="password">
+          <ownedComment xmi:id="_MxpcdlxnEeSmKPoJ1dtJaQ">
+            <body>登录密码</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralInteger" xmi:id="_Mxpcd1xnEeSmKPoJ1dtJaQ" name="length" value="40"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_MxpceFxnEeSmKPoJ1dtJaQ" name="phone">
+          <ownedComment xmi:id="_MxpceVxnEeSmKPoJ1dtJaQ">
+            <body>号码</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralInteger" xmi:id="_MxpcelxnEeSmKPoJ1dtJaQ" name="length" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Mxpce1xnEeSmKPoJ1dtJaQ" name="number">
+          <ownedComment xmi:id="_MxpcfFxnEeSmKPoJ1dtJaQ">
+            <body>编号</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralInteger" xmi:id="_MxpcfVxnEeSmKPoJ1dtJaQ" name="length" value="40"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_MxpcflxnEeSmKPoJ1dtJaQ" name="unit" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_bx0gMDwfEeS8msac4nYokQ" aggregation="shared">
+          <ownedComment xmi:id="_Mxpcf1xnEeSmKPoJ1dtJaQ">
+            <body>组织</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_oGppAV94EeSsookuI_8wVA" name="field_form">
+          <ownedParameter xmi:id="_q55zwF94EeSsookuI_8wVA" name="name">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8sY0EEIdEeeVrtCwULwuBA" value="32"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_-8v3AF94EeSsookuI_8wVA" name="password"/>
+          <ownedParameter xmi:id="_CrUagF95EeSsookuI_8wVA" name="phone"/>
+          <ownedParameter xmi:id="_FL8kMF95EeSsookuI_8wVA" name="number">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2ueEIEIdEeeVrtCwULwuBA" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_HH7IsF95EeSsookuI_8wVA" name="unit"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_JqfzIF95EeSsookuI_8wVA" name="field_list">
+          <ownedParameter xmi:id="_RhtnAF95EeSsookuI_8wVA" name="id"/>
+          <ownedParameter xmi:id="_RhtnAF95EeSsookuI_8wVA" name="name"/>
+          <ownedParameter xmi:id="_S7Hp8F95EeSsookuI_8wVA" name="phone"/>
+          <ownedParameter xmi:id="_UaVZ8F95EeSsookuI_8wVA" name="number"/>
+          <ownedParameter xmi:id="_WJpbcF95EeSsookuI_8wVA" name="unit.name">
+            <upperValue xmi:type="uml:LiteralString" xmi:id="_mr3nwWESEeSIQKT6p9Ov9g" name="searchField" value="name"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_MQDgIF95EeSsookuI_8wVA" name="field_search">
+          <ownedParameter xmi:id="_Yih-YF95EeSsookuI_8wVA" name="name"/>
+          <ownedParameter xmi:id="_Zm7aoF95EeSsookuI_8wVA" name="phone"/>
+          <ownedParameter xmi:id="_bdGSEF95EeSsookuI_8wVA" name="number"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_c4Y5UHltEeSCz4rALsCTBQ" name="BasePrivilege">
+        <ownedComment xmi:id="_c4Y5UXltEeSCz4rALsCTBQ">
+          <body>按钮权限</body>
+        </ownedComment>
+        <generalization xmi:id="_c4Y5UnltEeSCz4rALsCTBQ" general="_RgR-0Hg_EeSA2unnH8JScg"/>
+        <ownedAttribute xmi:id="_c4Y5U3ltEeSCz4rALsCTBQ" name="code">
+          <ownedComment xmi:id="_c4Y5VHltEeSCz4rALsCTBQ">
+            <body>代码</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c4Y5VXltEeSCz4rALsCTBQ" name="length" value="80"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_c4Y5VnltEeSCz4rALsCTBQ" name="name">
+          <ownedComment xmi:id="_c4Y5V3ltEeSCz4rALsCTBQ">
+            <body>权限名称</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c4Y5WHltEeSCz4rALsCTBQ" name="length" value="80"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_c4Y5WXltEeSCz4rALsCTBQ" name="icon">
+          <ownedComment xmi:id="_c4Y5WnltEeSCz4rALsCTBQ">
+            <body>图标</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c4Y5W3ltEeSCz4rALsCTBQ" name="length" value="80"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_c4Y5XHltEeSCz4rALsCTBQ" name="css">
+          <ownedComment xmi:id="_c4Y5XXltEeSCz4rALsCTBQ">
+            <body>样式</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_c4Y5XnltEeSCz4rALsCTBQ" name="length" value="80"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_c4Y5X3ltEeSCz4rALsCTBQ" name="field_search">
+          <ownedParameter xmi:id="_c4Y5YHltEeSCz4rALsCTBQ" name="name"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_c4Y5YXltEeSCz4rALsCTBQ" name="field_list">
+          <ownedParameter xmi:id="_c4Y5YnltEeSCz4rALsCTBQ" name="code"/>
+          <ownedParameter xmi:id="_PPQH8D1gEeez9rQHHrNbGw" name="name"/>
+          <ownedParameter xmi:id="_c4Y5Y3ltEeSCz4rALsCTBQ" name="icon"/>
+          <ownedParameter xmi:id="_c4Y5ZHltEeSCz4rALsCTBQ" name="css"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_c4Y5ZXltEeSCz4rALsCTBQ" name="field_form">
+          <ownedParameter xmi:id="_c4Y5ZnltEeSCz4rALsCTBQ" name="code"/>
+          <ownedParameter xmi:id="_c4Y5Z3ltEeSCz4rALsCTBQ" name="name"/>
+          <ownedParameter xmi:id="_c4Y5aHltEeSCz4rALsCTBQ" name="icon"/>
+          <ownedParameter xmi:id="_c4Y5aXltEeSCz4rALsCTBQ" name="css"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ATZyAIkoEeShdPL4MG972g" name="BaseRole">
+        <ownedComment xmi:id="_ATZyAYkoEeShdPL4MG972g">
+          <body>用户角色</body>
+        </ownedComment>
+        <generalization xmi:id="_ATZyAokoEeShdPL4MG972g" general="_RgR-0Hg_EeSA2unnH8JScg"/>
+        <ownedAttribute xmi:id="_ATZyA4koEeShdPL4MG972g" name="name">
+          <ownedComment xmi:id="_ATZyBIkoEeShdPL4MG972g">
+            <body>角色名称</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ATZyBYkoEeShdPL4MG972g" value="70"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_ATZyBokoEeShdPL4MG972g" name="unit" type="_bx0gMDwfEeS8msac4nYokQ" aggregation="shared">
+          <ownedComment xmi:id="_ATZyB4koEeShdPL4MG972g">
+            <body>所属部门</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_ATZyCIkoEeShdPL4MG972g" name="field_search">
+          <ownedParameter xmi:id="_ATZyCYkoEeShdPL4MG972g" name="name"/>
+          <ownedParameter xmi:id="_ATZyCokoEeShdPL4MG972g" name="unit"/>
+          <ownedParameter xmi:id="_ATZyC4koEeShdPL4MG972g" name="describ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATZyDIkoEeShdPL4MG972g" name="field_list">
+          <ownedParameter xmi:id="_ATZyDYkoEeShdPL4MG972g" name="name"/>
+          <ownedParameter xmi:id="_ATZyDokoEeShdPL4MG972g" name="unit.name"/>
+          <ownedParameter xmi:id="_ATZyD4koEeShdPL4MG972g" name="createTime"/>
+          <ownedParameter xmi:id="_ATZyEIkoEeShdPL4MG972g" name="createUser.name"/>
+          <ownedParameter xmi:id="_ATZyEYkoEeShdPL4MG972g" name="updateTime"/>
+          <ownedParameter xmi:id="_ATZyEokoEeShdPL4MG972g" name="updateUser.name"/>
+          <ownedParameter xmi:id="_ATZyE4koEeShdPL4MG972g" name="describ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATZyFIkoEeShdPL4MG972g" name="field_form">
+          <ownedParameter xmi:id="_ATZyFYkoEeShdPL4MG972g" name="name"/>
+          <ownedParameter xmi:id="_ATZyFokoEeShdPL4MG972g" name="unit"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_2a91QJKTEeSxa-r3ldRL-A" name="BaseRoleMenu">
+        <ownedComment xmi:id="_2a91QZKTEeSxa-r3ldRL-A">
+          <body>角色菜单</body>
+        </ownedComment>
+        <generalization xmi:id="_2a91QpKTEeSxa-r3ldRL-A" general="_RgR-0Hg_EeSA2unnH8JScg"/>
+        <ownedAttribute xmi:id="_2a91Q5KTEeSxa-r3ldRL-A" name="role" type="_ATZyAIkoEeShdPL4MG972g" aggregation="shared">
+          <ownedComment xmi:id="_2a91RJKTEeSxa-r3ldRL-A">
+            <body>角色</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_2a91RZKTEeSxa-r3ldRL-A" name="menu" type="_koreEFIWEeSYGO717AddZA" aggregation="shared">
+          <ownedComment xmi:id="_2a91RpKTEeSxa-r3ldRL-A">
+            <body>菜单</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_sv7L8JKWEeSxa-r3ldRL-A" name="BaseRoleMenuPrivilege">
+        <ownedComment xmi:id="_sv7L8ZKWEeSxa-r3ldRL-A">
+          <body>角色菜单权限</body>
+        </ownedComment>
+        <generalization xmi:id="_sv7L8pKWEeSxa-r3ldRL-A" general="_RgR-0Hg_EeSA2unnH8JScg"/>
+        <ownedAttribute xmi:id="_sv7L85KWEeSxa-r3ldRL-A" name="roleMenu" type="_2a91QJKTEeSxa-r3ldRL-A" aggregation="shared">
+          <ownedComment xmi:id="_sv7L9JKWEeSxa-r3ldRL-A">
+            <body>角色菜单</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_sv7L9ZKWEeSxa-r3ldRL-A" name="privilege" type="_c4Y5UHltEeSCz4rALsCTBQ" aggregation="shared">
+          <ownedComment xmi:id="_sv7L9pKWEeSxa-r3ldRL-A">
+            <body>权限</body>
+          </ownedComment>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_Zz5lkWJsEeSnR6tM4Hn_0A" name="sys">
+    <packagedElement xmi:type="uml:Package" xmi:id="_eXN_wGJsEeSnR6tM4Hn_0A" name="sys">
+      <packagedElement xmi:type="uml:Class" xmi:id="_a8BcsGKXEeSIGPGRg2ku2Q" name="SysParam">
+        <ownedComment xmi:id="_a8BcsWKXEeSIGPGRg2ku2Q">
+          <body>系统参数</body>
+        </ownedComment>
+        <generalization xmi:id="_a8BcsmKXEeSIGPGRg2ku2Q" general="_qmkY7VIWEeSYGO717AddZA"/>
+        <ownedAttribute xmi:id="_a8Bcs2KXEeSIGPGRg2ku2Q" name="module">
+          <ownedComment xmi:id="_a8BctGKXEeSIGPGRg2ku2Q">
+            <body>子系统</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a8BctWKXEeSIGPGRg2ku2Q" name="length" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_a8BctmKXEeSIGPGRg2ku2Q" name="pname">
+          <ownedComment xmi:id="_a8Bct2KXEeSIGPGRg2ku2Q">
+            <body>参数名</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a8BcuGKXEeSIGPGRg2ku2Q" name="length" value="40"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_a8BcuWKXEeSIGPGRg2ku2Q" name="pvalue">
+          <ownedComment xmi:id="_a8BcumKXEeSIGPGRg2ku2Q">
+            <body>参数值</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a8Bcu2KXEeSIGPGRg2ku2Q" name="length" value="100"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_a8BcvGKXEeSIGPGRg2ku2Q" name="describ">
+          <ownedComment xmi:id="_a8BcvWKXEeSIGPGRg2ku2Q">
+            <body>描述</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a8BcvmKXEeSIGPGRg2ku2Q" name="length" value="20"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_a8Bcv2KXEeSIGPGRg2ku2Q" name="pindex">
+          <ownedComment xmi:id="_a8BcwGKXEeSIGPGRg2ku2Q">
+            <body>顺序</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a8BcwWKXEeSIGPGRg2ku2Q" name="length" value="5"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_a8BcwmKXEeSIGPGRg2ku2Q" name="field_list">
+          <ownedParameter xmi:id="_a8Bcw2KXEeSIGPGRg2ku2Q" name="module"/>
+          <ownedParameter xmi:id="_a8BcxGKXEeSIGPGRg2ku2Q" name="pname"/>
+          <ownedParameter xmi:id="_a8BcxWKXEeSIGPGRg2ku2Q" name="pvalue"/>
+          <ownedParameter xmi:id="_a8BcxmKXEeSIGPGRg2ku2Q" name="describ"/>
+          <ownedParameter xmi:id="_a8Bcx2KXEeSIGPGRg2ku2Q" name="pindex"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_a8BcyGKXEeSIGPGRg2ku2Q" name="field_search">
+          <ownedParameter xmi:id="_a8BcyWKXEeSIGPGRg2ku2Q" name="module"/>
+          <ownedParameter xmi:id="_a8BcymKXEeSIGPGRg2ku2Q" name="pname"/>
+          <ownedParameter xmi:id="_a8Bcy2KXEeSIGPGRg2ku2Q" name="describ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_a8BczGKXEeSIGPGRg2ku2Q" name="field_form">
+          <ownedParameter xmi:id="_a8BczWKXEeSIGPGRg2ku2Q" name="module"/>
+          <ownedParameter xmi:id="_a8BczmKXEeSIGPGRg2ku2Q" name="describ"/>
+          <ownedParameter xmi:id="_a8Bcz2KXEeSIGPGRg2ku2Q" name="pname"/>
+          <ownedParameter xmi:id="_a8Bc0GKXEeSIGPGRg2ku2Q" name="pvalue"/>
+          <ownedParameter xmi:id="_a8Bc0WKXEeSIGPGRg2ku2Q" name="pindex"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_SNnEgD4mEeesutvSMQfVCg" name="btsd">
+    <packagedElement xmi:type="uml:Package" xmi:id="_SNnEgT4mEeesutvSMQfVCg" name="btsd">
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCg" name="BtsdCoin">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCg">
+          <body>虚拟币</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_SNnEhT4mEeesutvSMQfVCg" name="id">
+          <ownedComment xmi:id="_SNnEhj4mEeesutvSMQfVCg">
+            <body>虚拟币编码</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNnEhz4mEeesutvSMQfVCg" name="length" value="16"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="name">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>虚拟币名称</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNnEij4mEeesutvSMQfVCg" name="length" value="32"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiz4mEeesutvSMQfVCg" name="mk">
+          <ownedComment xmi:id="_SNnEjD4mEeesutvSMQfVCg">
+            <body>市场</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNnEjT4mEeesutvSMQfVCg" name="length" value="16"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="name"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="mk"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_bq63AD4nEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_bq63AT4nEeesutvSMQfVCg" name="name"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+          <ownedParameter xmi:id="_cUpJcD4nEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_cUpJcT4nEeesutvSMQfVCg" name="name"/>
+          <ownedParameter xmi:id="_cUpJcj4nEeesutvSMQfVCg" name="mk"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCa" name="BtsdTest">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCa">
+          <body>模驱测试</body>
+        </ownedComment>
+        <generalization xmi:id="_ATZyAokoEeShdPL4MG972a" general="_RgR-0Hg_EeSA2unnH8JScg"/>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCa" name="name">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCa">
+            <body>虚拟币名称</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNnEij4mEeesutvSMQfVCg" name="length" value="32"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiz4mEeesutvSMQfVCg" name="mk">
+          <ownedComment xmi:id="_SNnEjD4mEeesutvSMQfVCg">
+            <body>市场</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SNnEjT4mEeesutvSMQfVCg" name="length" value="16"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_MxpcflxnEeSmKPoJ1dtJaQ" name="unit" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_bx0gMDwfEeS8msac4nYokQ" aggregation="shared">
+          <ownedComment xmi:id="_Mxpcf1xnEeSmKPoJ1dtJaQ">
+            <body>组织</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="name"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="mk"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_bq63AD4nEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_bq63AT4nEeesutvSMQfVCg" name="name"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+          <ownedParameter xmi:id="_cUpJcD4nEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_cUpJcT4nEeesutvSMQfVCg" name="name"/>
+          <ownedParameter xmi:id="_cUpJcj4nEeesutvSMQfVCg" name="mk"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCl" name="BtsdDayLine">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币日线</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="date">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="datefmt">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>格式化日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="cjl">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>成交量</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="kp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>开盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zg">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最高</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zd">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最低</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="sp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>收盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="date" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="kp"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zg"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zd"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="sp"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt" type="_qmkY0FIWEeSYGO717AddZA" />
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCh" name="BtsdHourLine">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币时线</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="date">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="datefmt">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>格式化日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="cjl">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>成交量</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="kp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>开盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zg">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最高</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zd">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最低</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="sp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>收盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="date" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="kp"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zg"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zd"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="sp"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt" type="_qmkY0FIWEeSYGO717AddZA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCm" name="BtsdMin5Line">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币5分线</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="date">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="datefmt">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>格式化日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="cjl">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>成交量</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="kp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>开盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zg">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最高</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zd">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最低</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="sp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>收盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="date" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="kp"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zg"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zd"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="sp"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt" type="_qmkY0FIWEeSYGO717AddZA" />
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCh" name="BtsdHisTrade">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币历史成交</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="date">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="price">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>成交价</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="volume">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>成交量</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="type" type="_qmkY0VIWEeSYGO717AddZ1">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>交易方式</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="date" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="price"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="volume"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="type" type="_qmkY0VIWEeSYGO717AddZ1" />
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCh" name="DwBtsdHourLine">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币时线数据仓库</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="date">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="datefmt">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>格式化日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="cjl">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>成交量</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="kp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>开盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zg">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最高</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zd">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最低</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="sp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>收盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zgscale">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最高占开盘比例</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zdscale">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最低占开盘比例</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="spscale">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>收盘占开盘比例</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="date" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zgscale"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zdscale"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="spscale"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt" type="_qmkY0FIWEeSYGO717AddZA"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="button_manage">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="processData">
+            <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+              <body>数据加工</body>
+            </ownedComment>
+          </ownedParameter>
+          <!--<ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="incrementScaleKMean">
+            <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+              <body>涨幅聚类</body>
+            </ownedComment>
+          </ownedParameter>-->
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="createHmm">
+            <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+              <body>生成hmm</body>
+            </ownedComment>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvSMQfVCm" name="DwBtsdMin5Line">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币5分线数据仓库</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="date">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="datefmt">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>格式化日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="cjl">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>成交量</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="kp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>开盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zg">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最高</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zd">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最低</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="sp">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>收盘</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zgscale">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最高占开盘幅度</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="zdscale">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最低占开盘幅度</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="spscale">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>收盘占开盘幅度</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="date" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zgscale"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="zdscale"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="spscale"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="datefmt" type="_qmkY0FIWEeSYGO717AddZA" />
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="button_manage">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="processData">
+            <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+              <body>数据加工</body>
+            </ownedComment>
+          </ownedParameter>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="createHmm">
+            <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+              <body>生成hmm</body>
+            </ownedComment>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEHBtsdHmmState" name="BtsdHmmState">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>比特时代hmm状态配置</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="type">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>模型类型1.日线2.时线3.五分线4.历史交易</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="name">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>状态名称</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="no">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>编号</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="minBound">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最小边界</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="maxBound">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最大边界</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="type" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="name" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="no" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="minBound"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="maxBound"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="type"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="coin.id" />
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="type" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="name" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="no" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="minBound"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="maxBound"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEeesutvHmmBtsd" name="HmmBtsd">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币Hmm</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="type">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>模型类型1.日线2.时线3.五分线4.历史交易</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="coin" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvSMQfVCg" aggregation="shared">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>虚拟币代码</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="startDate">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>模型建立起始日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="endDate">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>模型建立结束日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Long"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="startDatefmt">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>模型建立起始格式化日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="endDatefmt">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>模型建立结束格式化日期</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="stateSize">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>状态数量</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="transProbability">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>状态转移概率矩阵</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6kP6sHlsEeS7xPKFl6V9Kg" name="length" value="1024"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="details" clientDependency="_qmkY8VIWEeSYGO717AddZA" type="_SNnEgj4mEHmmBtsdDetail" aggregation="composite">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>hmm明细</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="startDatefmt" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="endDatefmt"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="stateSize"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="coin.id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="startDatefmt" type="_qmkY0FIWEeSYGO717AddZA" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="endDatefmt" type="_qmkY0FIWEeSYGO717AddZA" />
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="button_manage">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="testHmm">
+            <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+              <body>测试</body>
+            </ownedComment>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SNnEgj4mEHmmBtsdDetail" name="HmmBtsdDetail">
+        <ownedComment xmi:id="_SNnEgz4mEeesutvSMQfVCl">
+          <body>虚拟币Hmm状态明细</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+          <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+            <body>主键</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="hmm" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_SNnEgj4mEeesutvHmmBtsd" aggregation="composite">
+          <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+            <body>hmm</body>
+          </ownedComment>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="name">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>状态名称</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="stateIndex">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>序号</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="minBound">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最小边界</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="maxBound">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>最大边界</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Double"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="pi">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>状态初始化概率</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6kP6sHlsEeS7xPKFl6V9Kg" name="length" value="1024"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="mean">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>状态mean</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6kP6sHlsEeS7xPKFl6V9Kg" name="length" value="1024"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SNnEiD4mEeesutvSMQfVCg" name="covariance">
+          <ownedComment xmi:id="_SNnEiT4mEeesutvSMQfVCg">
+            <body>状态协方差</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6kP6sHlsEeS7xPKFl6V9Kg" name="length" value="1024"/>
+        </ownedAttribute>
+        <ownedOperation xmi:id="_SNnElD4mEeesutvSMQfVCg" name="field_list">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="id"/>
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="hmm.id" isOrdered="true" />
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="name"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="stateIndex" />
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="minBound"/>
+          <ownedParameter xmi:id="_SNnElz4mEeesutvSMQfVCg" name="maxBound"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEmj4mEeesutvSMQfVCg" name="field_search">
+          <ownedParameter xmi:id="_SNnElT4mEeesutvSMQfVCg" name="hmm.id"/>
+          <ownedParameter xmi:id="_SNnElj4mEeesutvSMQfVCg" name="name" />
+        </ownedOperation>
+        <ownedOperation xmi:id="_SNnEnj4mEeesutvSMQfVCg" name="field_form">
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_qmkY0FIWEeSYGO717AddZA" name="DateTime">
+    <ownedAttribute xmi:id="__AqW8T2oEeSfLZ2nmQnH9w" name="area" clientDependency="_qmkY91IWEeSYGO717AddZA" type="_kpIKAFIWEeSYGO717AddZA" aggregation="composite">
+      <ownedComment xmi:id="_b1h9kD22EeS0nbOp8P7Ewg">
+        <body>区域</body>
+      </ownedComment>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Lx6lcD21EeS0nbOp8P7Ewg" value=""/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_qmkY0VIWEeSYGO717AddZA" name="state">
+    <ownedLiteral xmi:id="_qmkY0lIWEeSYGO717AddZA" name="启用">
+      <ownedComment xmi:id="_qmkY01IWEeSYGO717AddZA">
+        <body>启用</body>
+      </ownedComment>
+      <specification xmi:type="uml:LiteralInteger" xmi:id="_qmkY1FIWEeSYGO717AddZA" name="value" value="1"/>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_qmkY1VIWEeSYGO717AddZA" name="禁用">
+      <ownedComment xmi:id="_qmkY1lIWEeSYGO717AddZA">
+        <body>禁用</body>
+      </ownedComment>
+      <specification xmi:type="uml:LiteralInteger" xmi:id="_qmkY11IWEeSYGO717AddZA" name="value"/>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_qmkY0VIWEeSYGO717AddZ1" name="btsdTradeWay">
+    <ownedLiteral xmi:id="_qmkY0lIWEeSYGO717AddZA" name="买入">
+      <ownedComment xmi:id="_qmkY01IWEeSYGO717AddZA">
+        <body>买入</body>
+      </ownedComment>
+      <specification xmi:type="uml:LiteralInteger" xmi:id="_qmkY1FIWEeSYGO717AddZA" name="value" value="1"/>
+    </ownedLiteral>
+    <ownedLiteral xmi:id="_qmkY1VIWEeSYGO717AddZA" name="卖出">
+      <ownedComment xmi:id="_qmkY1lIWEeSYGO717AddZA">
+        <body>卖出</body>
+      </ownedComment>
+      <specification xmi:type="uml:LiteralInteger" xmi:id="_qmkY11IWEeSYGO717AddZA" name="value" value="2"/>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_qmkY2FIWEeSYGO717AddZA" name="enable"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qmkY2VIWEeSYGO717AddZA" memberEnd="_qmkY2lIWEeSYGO717AddZA">
+    <ownedEnd xmi:id="_qmkY2lIWEeSYGO717AddZA" type="_qmkY0FIWEeSYGO717AddZA" association="_qmkY2VIWEeSYGO717AddZA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_qmkY7VIWEeSYGO717AddZA" name="Base">
+    <ownedComment xmi:id="_qmkY7lIWEeSYGO717AddZA">
+      <body>原始基类</body>
+    </ownedComment>
+    <ownedAttribute xmi:id="_qmkY71IWEeSYGO717AddZA" name="id">
+      <ownedComment xmi:id="_qmkY8FIWEeSYGO717AddZA">
+        <body>主键</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_RgR-0Hg_EeSA2unnH8JScg" name="BaseObject">
+    <generalization xmi:id="_TUEQoHg_EeSA2unnH8JScg" general="_qmkY7VIWEeSYGO717AddZA"/>
+    <ownedAttribute xmi:id="_NRQkMHhAEeSA2unnH8JScg" name="state" type="_qmkY0VIWEeSYGO717AddZA">
+      <ownedComment xmi:id="_T4J_sHhAEeSA2unnH8JScg">
+        <body>状态</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_aMuVEHhAEeSA2unnH8JScg" name="createTime" type="_qmkY0FIWEeSYGO717AddZA">
+      <ownedComment xmi:id="_v8MSMHhAEeSA2unnH8JScg">
+        <body>创建时间</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_o3yIAIkaEeSYNdFtFwmT3A" name="createUser" clientDependency="_qmkY81IWEeSYGO717AddZA" type="_MxpccFxnEeSmKPoJ1dtJaQ" aggregation="shared">
+      <ownedComment xmi:id="_3itrYIkaEeSYNdFtFwmT3A">
+        <body>创建人</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_1ejHgHhAEeSA2unnH8JScg" name="updateTime" type="_qmkY0FIWEeSYGO717AddZA">
+      <ownedComment xmi:id="_5xeVQHhAEeSA2unnH8JScg">
+        <body>更新时间</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_DbRNwIkbEeSYNdFtFwmT3A" name="updateUser" clientDependency="_qmkY81IWEeSYGO717AddZA" type="_MxpccFxnEeSmKPoJ1dtJaQ" aggregation="shared">
+      <ownedComment xmi:id="_GXUIIIkbEeSYNdFtFwmT3A">
+        <body>最近修改人</body>
+      </ownedComment>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qv7zQHhBEeSA2unnH8JScg" name="describ">
+      <ownedComment xmi:id="_yTK7MHhBEeSA2unnH8JScg">
+        <body>描述</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6kP6sHlsEeS7xPKFl6V9Kg" name="length" value="256"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_TvrpsIkWEeSFCI3ODSjf4Q" name="sindex">
+      <ownedComment xmi:id="_TvrpsYkWEeSFCI3ODSjf4Q">
+        <body>显示顺序</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TvrpsokWEeSFCI3ODSjf4Q" value="11"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_qmkY21IWEeSYGO717AddZA" name="BaseHierarchy">
+    <ownedComment xmi:id="_qmkY3FIWEeSYGO717AddZA">
+      <body>层级特征基类</body>
+    </ownedComment>
+    <generalization xmi:id="_qmkY3VIWEeSYGO717AddZA" general="_qmkY7VIWEeSYGO717AddZA"/>
+    <ownedAttribute xmi:id="_qmkY3lIWEeSYGO717AddZA" name="pid">
+      <ownedComment xmi:id="_qmkY31IWEeSYGO717AddZA">
+        <body>父节点</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qmkY4FIWEeSYGO717AddZA" name="length" value="11"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qmkY4VIWEeSYGO717AddZA" name="name">
+      <ownedComment xmi:id="_qmkY4lIWEeSYGO717AddZA">
+        <body>名称</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <upperValue xmi:type="uml:LiteralInteger" xmi:id="_qmkY41IWEeSYGO717AddZA" name="length" value="80"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qmkY5FIWEeSYGO717AddZA" name="lindex">
+      <ownedComment xmi:id="_qmkY5VIWEeSYGO717AddZA">
+        <body>左顺序</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <upperValue xmi:type="uml:LiteralInteger" xmi:id="_qmkY5lIWEeSYGO717AddZA" name="length" value="11"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qmkY51IWEeSYGO717AddZA" name="rindex">
+      <ownedComment xmi:id="_qmkY6FIWEeSYGO717AddZA">
+        <body>右顺序</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qmkY6VIWEeSYGO717AddZA" name="length" value="11"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_QTJRYIkWEeSFCI3ODSjf4Q" name="sindex">
+      <ownedComment xmi:id="_QTJRYYkWEeSFCI3ODSjf4Q">
+        <body>显示顺序</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QTJRYokWEeSFCI3ODSjf4Q" value="11"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qmkY6lIWEeSYGO717AddZA" name="level">
+      <ownedComment xmi:id="_qmkY61IWEeSYGO717AddZA">
+        <body>层级</body>
+      </ownedComment>
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <upperValue xmi:type="uml:LiteralInteger" xmi:id="_qmkY7FIWEeSYGO717AddZA" name="length" value="4"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_qmkY8VIWEeSYGO717AddZA" name="1-*">
+    <ownedComment xmi:id="_qmkY8lIWEeSYGO717AddZA">
+      <body>1对多关系,客户端是多方,己端是1方</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_qmkY81IWEeSYGO717AddZA" name="1-1" client="_o3yIAIkaEeSYNdFtFwmT3A _DbRNwIkbEeSYNdFtFwmT3A">
+    <ownedComment xmi:id="_qmkY9FIWEeSYGO717AddZA">
+      <body>1对1关系</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_qmkY9VIWEeSYGO717AddZA" name="*-*">
+    <ownedComment xmi:id="_qmkY9lIWEeSYGO717AddZA">
+      <body>多对多关系</body>
+    </ownedComment>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_qmkY91IWEeSYGO717AddZA" name="*-1">
+    <ownedComment xmi:id="_qmkY-FIWEeSYGO717AddZA">
+      <body>多对1关系,客户端是1方,己端是多方</body>
+    </ownedComment>
+    <client xmi:type="uml:Property" href="#__AqW8T2oEeSfLZ2nmQnH9w"/>
+    <client xmi:type="uml:Property" href="gen.uml#_-JqFQFVIEeSR_IdHNTISjA"/>
+    <client xmi:type="uml:Property" href="#_-JqFQFVIEeSR_IdHNTISjA"/>
+    <client xmi:type="uml:Property" href="gen.uml#_MxpcflxnEeSmKPoJ1dtJaQ"/>
+    <client xmi:type="uml:Property" href="#_MxpcflxnEeSmKPoJ1dtJaQ"/>
+    <client xmi:type="uml:Property" href="#_MxpcflxnEeSmKPoJ1dtJaQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_dIXU0JZSEeS-ac4jT2ufgg" name="custom"/>
+</uml:Model>

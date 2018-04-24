@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:c="http://www.springframework.org/schema/c" xmlns:cache="http://www.springframework.org/schema/cache" xmlns:context="http://www.springframework.org/schema/context" xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p" xmlns:task="http://www.springframework.org/schema/task" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- spring mvc controller -->
+	<context:component-scan base-package="com.se7en.control" ></context:component-scan>
+
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+		<!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+		<property name="validationMessageSource" ref="messageSource"/>
+	</bean>
+
+	<!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找 -->
+				<!--<value>classpath:messages</value>
+                <value>classpath:org/hibernate/validator/ValidationMessages</value>-->
+			</list>
+		</property>
+		<property name="useCodeAsDefaultMessage" value="false"/>
+		<property name="defaultEncoding" value="UTF-8"/>
+		<property name="cacheSeconds" value="60"/>
+	</bean>
+
+	<!-- Spring MVC JSON -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<!-- <bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"> -->
+				<!--<bean id="fastJsonHttpMessageConverter" class="com.se7en.common.FastJsonHttpMessageConverter">-->
+				<bean id="mappingJacksonHttpMessageConverter"
+					  class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+							<value>application/json;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+				<!--<bean id="stringHttpMessageConverter"
+					  class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value>
+							<value>application/json;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>-->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="1"/>
+		<property name="prefix" value="/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+		<property name="contentType" value="text/html; charset=utf-8"/>
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+	</bean>
+
+	<!-- 全局异常配置 -->
+	<!--<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+	<bean id="exceptionResolver" class="com.se7en.common.Se7enMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">errors/500</prop>
+				<prop key="java.lang.Throwable">errors/500</prop>
+			</props>
+		</property>
+		<property name="statusCodes">
+			<props>
+				<prop key="errors/500">500</prop>
+			</props>
+		</property>
+		<!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+		<property name="warnLogCategory" value="WARN"></property>
+		<!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+		<property name="defaultErrorView" value="/jsp/500.jsp"></property>
+		<!-- 默认HTTP状态码 -->
+		<property name="defaultStatusCode" value="500"></property>
+	</bean>
+
+	<!-- file upload -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding"> 
+	 		<value>UTF-8</value> 
+	 	</property> 
+	 	<property name="maxUploadSize"> 
+	 		<value>104857600</value> 
+	 	</property> 
+	 	<property name="maxInMemorySize"> 
+	 		<value>4096</value> 
+	 	</property>
+	</bean> 
+	
+	<!-- interceptor -->
+	<mvc:interceptors>
+		<!-- 多个拦截器，顺序执行 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.se7en.web.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+</beans>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.se7en.model.base.BaseMenu" table="base_menu" >
+		<id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+		<property name="pid" type="java.lang.Integer">
+            <column name="pid">
+                <comment>父节点</comment>
+            </column>
+        </property>			
+		<property name="name" type="java.lang.String">
+            <column name="name" length="40">
+            	<comment>名称</comment>
+            </column>
+        </property>	
+		<property name="icon" type="java.lang.String">
+            <column name="icon" length="40">
+            	<comment>图标</comment>
+            </column>
+        </property>	
+		<property name="url" type="java.lang.String">
+            <column name="url" length="100">
+            	<comment>链接</comment>
+            </column>
+        </property>	
+		<property name="open" type="java.lang.Integer">
+            <column name="open">
+                <comment>是否展开</comment>
+            </column>
+        </property>		
+		<property name="data" type="java.lang.String">
+            <column name="data" length="100">
+            	<comment>节点数据</comment>
+            </column>
+        </property>	
+		<property name="sindex" type="java.lang.Integer">
+            <column name="sindex">
+                <comment>显示顺序</comment>
+            </column>
+        </property>			
+		<property name="state" type="java.lang.Integer">
+            <column name="state">
+                <comment>状态</comment>
+            </column>
+        </property>			
+		<property name="lindex" type="java.lang.Integer">
+            <column name="lindex">
+                <comment>左顺序</comment>
+            </column>
+        </property>			
+		<property name="rindex" type="java.lang.Integer">
+            <column name="rindex">
+                <comment>右顺序</comment>
+            </column>
+        </property>
+        <set name="menus" cascade="all" lazy="false" order-by="sindex">
+            <key>
+                <column name="pid" precision="21" scale="0">
+                    <comment>父节点id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.se7en.model.base.BaseMenu" />
+        </set>
+    </class>
+</hibernate-mapping>

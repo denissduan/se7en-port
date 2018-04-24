@@ -1,0 +1,129 @@
+#foreach( $opt in $class.getOwnedOperations() )
+#if(${opt.Name.contains("search")})
+<div class="page-header">
+	<form id="searchForm" action="$StringUtil.firstLower($className)/query.do" method="post" class="form-inline" role="form">
+#foreach ($optParam in $opt.OwnedParameters)
+#set($fldName = ${optParam.Name})
+#set($fldClassName = ${fldName.spllit("\\.")[0]})
+#set($prop = $modelEngine.getProperty($className,${fldName}))
+#set( $type = $prop.getType() )
+#if( $prop.getType().toString().contains("PrimitiveTypeImpl"))
+#set($typeName = $type.eProxyURI().fragment().toLowerCase())
+#if ($typeName.contains("string"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="form-control input-sm" placeholder="">
+		</div>
+#if ($prop.Upper > 64)
+#else
+#end
+#elseif($typeName.contains("int"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="input-mini" placeholder="" />
+			<script type="text/javascript">
+				$('#$StringUtil.firstLower($prop.Name)').ace_spinner({value:null,min:#if ($prop.Lower != 0)$prop.Lower #else 1#end,max:#if ($prop.Upper > 1)$prop.Upper #else 256#end,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'});
+			</script>
+		</div>
+#elseif($typeName.contains("boolean"))
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" value="0" onclick="$.core.checkClick(this)"> #if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end
+			</label>
+		</div>
+#elseif($typeName.contains("byte"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="input-mini" placeholder="" />
+			<script type="text/javascript">
+				$('#$StringUtil.firstLower($prop.Name)').ace_spinner({value:null,min:#if ($prop.Lower != 0)$prop.Lower #else 1#end,max:#if ($prop.Upper > 1)$prop.Upper #else 256#end ,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'});
+			</script>
+		</div>
+#elseif($typeName.contains("char"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="form-control input-sm" placeholder="">
+		</div>
+#elseif($typeName.contains("short"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="input-mini" placeholder="" />
+			<script type="text/javascript">
+				$('#$StringUtil.firstLower($prop.Name)').ace_spinner({value:null,min:#if ($prop.Lower != 0)$prop.Lower #else 1#end,max:#if ($prop.Upper > 1)$prop.Upper #else 256#end ,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'});
+			</script>
+		</div>
+#elseif($typeName.contains("long"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="input-mini" placeholder="" />
+			<script type="text/javascript">
+				$('#$StringUtil.firstLower($prop.Name)').ace_spinner({value:null,min:#if ($prop.Lower != 0)$prop.Lower #else 1#end,max:#if ($prop.Upper > 1)$prop.Upper #else 256#end,step:1, btn_up_class:'btn-info' , btn_down_class:'btn-info'});
+			</script>
+		</div>
+#elseif($typeName.contains("float"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="input-mini" placeholder="" />
+			<script type="text/javascript">
+				$('#$StringUtil.firstLower($prop.Name)').ace_spinner({value:null,min:#if ($prop.Lower != 0)$prop.Lower #else 1#end,max:#if ($prop.Upper > 1)$prop.Upper #else 256#end ,step:0.1, btn_up_class:'btn-info' , btn_down_class:'btn-info'});
+			</script>
+		</div>
+#elseif($typeName.contains("double"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="input-mini" placeholder="" />
+			<script type="text/javascript">
+				$('#$StringUtil.firstLower($prop.Name)').ace_spinner({value:null,min:#if ($prop.Lower != 0)$prop.Lower #else 1#end,max:#if ($prop.Upper > 1)$prop.Upper #else 256#end,step:0.1, btn_up_class:'btn-info' , btn_down_class:'btn-info'});
+			</script>
+		</div>
+#elseif($typeName.contains("blob"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="form-control input-sm" placeholder="">
+		</div>
+#elseif($typeName.contains("clob"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="form-control input-sm" placeholder="">
+		</div>
+#else
+#set($typeName = $type.getName().toLowerCase())
+#if( $typeName.contains("date") )
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="form-control input-sm date-picker" data-date-format="yyyy-mm-dd">
+			<span class="input-group-addon">
+				<i class="fa fa-calendar bigger-110"></i>
+			</span>
+		</div>
+#elseif( $typeName.contains("datetime") )
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="form-control input-sm datetime-picker" >
+			<span class="input-group-addon">
+				<i class="fa fa-clock-o bigger-110"></i>
+			</span>
+		</div>
+#end
+#end
+#elseif ( $prop.getType().toString().contains("EnumerationImpl"))
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<select id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" size="1" class="form-control input-sm">
+#foreach($ele in $prop.getType().OwnedElements)
+				<option value="$ViewUtil.getEnumerationValue($ele)" >$ViewUtil.getEnumerationText($ele)</option>
+#end
+			</select>
+		</div>
+#elseif( $prop.getType().toString().contains("ClassImpl"))
+#else
+		<div class="form-group">
+			<label class="control-label" for="$StringUtil.firstLower($prop.Name)">#if($prop.OwnedComments.size() == 1)$prop.OwnedComments.get(0).Body#end</label>
+			<input type="text" id="$StringUtil.firstLower($prop.Name)" name="$StringUtil.firstLower($prop.Name)" class="form-control input-sm" placeholder="">
+		</div>
+#end
+#end
+	</form>
+</div>
+#end
+#end
